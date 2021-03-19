@@ -1,6 +1,7 @@
-// TODO
-// apply a full reset/normalize to all child elements inside widget
-// to ensure no styles from the surrounding page bleed in
+/* TODO
+   apply a full reset/normalize to all child elements inside widget
+   to ensure no styles from the surrounding page bleed in
+*/
 .Widget,
 .Widget > * {
     box-sizing: border-box;
@@ -9,3 +10,14 @@
 h1 {
     text-align: center;
 }
+
+.Input {
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.Foo {
+    padding: 1rem;
+}
+

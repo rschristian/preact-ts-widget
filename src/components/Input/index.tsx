@@ -1,8 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import cn from 'classnames';
 
-import styles from './styles.css';
-
 interface InputProps {
     className?: string;
     value?: string;
@@ -10,7 +8,6 @@ interface InputProps {
 }
 
 const Input: FunctionalComponent<InputProps> = ({ className, ...rest }) => {
-    console.log(styles);
     return <input class={cn('Input', className)} {...rest} />;
 };
 

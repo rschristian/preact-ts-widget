@@ -3,10 +3,10 @@
     "version": "0.1.0",
     "description": "",
     "source": "src/index.ts",
-    "main": "dist/index.js",
+    "module": "dist/index.js",
     "scripts": {
         "dev": "preact watch --template src/template.html",
-        "build": "microbundle build -f umd --external none --css inline --no-compress",
+        "build": "microbundle build -o dist/index.js -f es --external none --css inline",
         "lint": "eslint '{src,test}/**/*.{ts,tsx}'",
         "test": "jest"
     },

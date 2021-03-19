@@ -1,4 +1,5 @@
 import { FunctionalComponent, h } from 'preact';
+import { useEffect } from 'preact/hooks';
 import Foo from '../Foo';
 
 import styles from './styles.css';
@@ -8,8 +9,18 @@ interface WidgetProps {
     color?: string;
 }
 
+// Adopted from: https://github.com/omgovich/react-colorful/blob/master/src/hooks/useStyleSheet.ts
+let styleElement: HTMLStyleElement | undefined;
+
 const Widget: FunctionalComponent<WidgetProps> = ({ title, color }) => {
-    console.log(styles);
+
+    useEffect(() => {
+        if (typeof document !== 'undefined' && !styleElement) {
+            styleElement = document.head.appendChild(document.createElement('style'));
+            styleElement.innerHTML = styles;
+        }
+    }, []);
+
     return (
         <div class="Widget">
             <h1 style={{ color }}>{title}</h1>

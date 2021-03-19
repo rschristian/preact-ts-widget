@@ -2,15 +2,12 @@ import { FunctionalComponent, h } from 'preact';
 import { useCallback, useState } from 'preact/hooks';
 import Input from '../Input';
 
-import styles from './styles.css';
-
 interface FooProps {
     firstName: string;
 }
 
 const Foo: FunctionalComponent<FooProps> = ({ firstName }) => {
     const [lastName, setLastName] = useState<string>('User');
-    console.log(styles);
 
     const onLastNameInput = useCallback(
         (event: HTMLElementInputEvent<HTMLInputElement>) => {
