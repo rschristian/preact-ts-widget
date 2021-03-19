@@ -2,7 +2,7 @@ import { FunctionalComponent, h } from 'preact';
 import { useCallback, useState } from 'preact/hooks';
 import Input from '../Input';
 
-import styles from './styles.module.scss';
+import styles from './styles.css';
 
 interface FooProps {
     firstName: string;
@@ -10,6 +10,7 @@ interface FooProps {
 
 const Foo: FunctionalComponent<FooProps> = ({ firstName }) => {
     const [lastName, setLastName] = useState<string>('User');
+    console.log(styles);
 
     const onLastNameInput = useCallback(
         (event: HTMLElementInputEvent<HTMLInputElement>) => {
@@ -20,7 +21,7 @@ const Foo: FunctionalComponent<FooProps> = ({ firstName }) => {
     );
 
     return (
-        <div class={styles.Foo}>
+        <div class="Foo">
             <p>
                 Hello, {firstName} {lastName}
             </p>

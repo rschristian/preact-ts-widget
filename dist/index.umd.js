@@ -259,18 +259,19 @@
   }());
   });
 
-  var styles$2 = {"Input":"_3E_BR"};
+  var css_248z$2 = ".Input {\n    border: 1px solid #ddd;\n    border-radius: 0.25rem;\n    padding: 0.5rem 1rem;\n}\n";
 
   var Input = function Input(_ref) {
     var className = _ref.className,
         rest = _objectWithoutPropertiesLoose(_ref, ["className"]);
 
+    console.log(css_248z$2);
     return v$1("input", Object.assign({
-      "class": classnames(styles$2.Input, className)
+      "class": classnames('Input', className)
     }, rest));
   };
 
-  var styles$1 = {"Foo":"_1GtBJ"};
+  var css_248z$1 = ".Foo {\n    padding: 1rem;\n}\n";
 
   var Foo = function Foo(_ref) {
     var firstName = _ref.firstName;
@@ -279,25 +280,27 @@
         lastName = _useState[0],
         setLastName = _useState[1];
 
+    console.log(css_248z$1);
     var onLastNameInput = A(function (event) {
       console.log('last name updated!', event.target.value);
       setLastName(event.target.value);
     }, []);
     return v$1("div", {
-      "class": styles$1.Foo
+      "class": "Foo"
     }, v$1("p", null, "Hello, ", firstName, " ", lastName), v$1("p", null, v$1(Input, {
       value: lastName,
       onInput: onLastNameInput
     })));
   };
 
-  var styles = {"Widget":"_1vjs4"};
+  var css_248z = "// TODO\n// apply a full reset/normalize to all child elements inside widget\n// to ensure no styles from the surrounding page bleed in\n.Widget,\n.Widget > * {\n    box-sizing: border-box;\n}\n\nh1 {\n    text-align: center;\n}\n";
 
   var Widget = function Widget(_ref) {
     var title = _ref.title,
         color = _ref.color;
+    console.log(css_248z);
     return v$1("div", {
-      "class": styles.Widget
+      "class": "Widget"
     }, v$1("h1", {
       style: {
         color: color
@@ -315,4 +318,4 @@
   });
 
 })));
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=index.umd.js.map
